@@ -1,6 +1,7 @@
 // src/index.js
 
 import { greet } from './greeting'; // 從 greeting.js 檔案中引入 greet 函式
+import './styles.scss'; // 引入 SCSS 檔案
 
 //greet('Webpack'); // 使用 greet 函式並傳入 'Webpack' 參數
 
