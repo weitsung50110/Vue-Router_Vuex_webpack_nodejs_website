@@ -11,7 +11,7 @@ module.exports = {
     },
     module: {
         rules: [
-            {
+            {                    //當 webpack 遇到符合 test 條件的檔案時，將會應用後面指定的 use 中的 loader。
                 test: /\.scss$/, // 匹配 .scss 檔案
                 use: [
                     'style-loader', // 將編譯後的 CSS 以 <style> 插入到 HTML 文件中
@@ -21,7 +21,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [//，即使您在 HTML 文件中未手動添加 <script src="bundle.js">，Webpack 在打包時會自動將生成的 bundle.js 檔案插入到 HTML 文件中。
+    plugins: [//即使您在 HTML 文件中未手動添加 <script src="bundle.js">，Webpack 在打包時會自動將生成的 bundle.js 檔案插入到 HTML 文件中。
         new HtmlWebpackPlugin({  
             template: './src/index.html', // 使用 HtmlWebpackPlugin 生成 HTML 檔案
         }),
