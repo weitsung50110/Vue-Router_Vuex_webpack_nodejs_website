@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "sass": "^1.69.5",
+    "vue": "^3.3.13",
+    "vue-loader": "^16.8.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

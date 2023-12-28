@@ -1,0 +1,1 @@
+(()=>{"use strict";document.getElementById("showText").addEventListener("click",(()=>{const e=(t=document.getElementById("userInput").value,console.log(`Hello, ${t}!`),`Hello, ${t}!`);var t;document.getElementById("app").innerHTML=`<p>${e}</p>`}))})();
