@@ -2,6 +2,7 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader') // 引入 VueLoaderPlugin
 
 module.exports = {
     entry: './src/index.js', // 定義入口點為 src 目錄下的 index.js
@@ -11,6 +12,7 @@ module.exports = {
     },
     module: {
         rules: [
+
             {                    //當 webpack 遇到符合 test 條件的檔案時，將會應用後面指定的 use 中的 loader。
                 test: /\.scss$/, // 匹配 .scss 檔案
                 use: [
@@ -24,6 +26,6 @@ module.exports = {
     plugins: [//即使您在 HTML 文件中未手動添加 <script src="bundle.js">，Webpack 在打包時會自動將生成的 bundle.js 檔案插入到 HTML 文件中。
         new HtmlWebpackPlugin({  
             template: './src/index.html', // 使用 HtmlWebpackPlugin 生成 HTML 檔案
-        }),
-    ],
+        })
+    ]
 };

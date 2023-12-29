@@ -1,3 +1,6 @@
+// src/vue.js
+/*import Vue from 'vue';
+
 const app_mess = {
     data() {
         return {
@@ -5,4 +8,4 @@ const app_mess = {
         }
     }
   }
-  Vue.createApp(app_mess).mount('#app_mess')
+Vue.createApp(app_mess).mount('#app_mess')*/
