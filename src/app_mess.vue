@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       message: 'Hello from Vue!', // 將 message 設置為您希望顯示的文字
-      txt:'666'
+      txt:'6626'
     };
   },
   methods: {
