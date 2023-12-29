@@ -35,6 +35,7 @@ module.exports = {
         exclude: /node_modules/, // 排除 node_modules 目錄下的檔案
         use: {
           loader: 'babel-loader', // 使用 babel-loader 處理 JavaScript 檔案
+          // Babel 會將較新版本的 JavaScript 語法轉換為較舊版本的語法，確保你的程式碼在不同環境中運行。
         },
       },
     ]
