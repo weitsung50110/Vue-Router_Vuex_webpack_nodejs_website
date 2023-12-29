@@ -1,15 +1,22 @@
 
-PS D:\webpack> npm list <br />
-webpack@ D:\webpack <br />
-+-- css-loader@6.8.1 <br />
-+-- html-webpack-plugin@5.6.0 <br />
-+-- sass-loader@13.3.3 <br />
-+-- sass@1.69.5 <br />
-+-- style-loader@3.3.3 <br />
-+-- vue-loader@16.8.3 <br />
-+-- vue@3.3.13 <br />
-+-- webpack-cli@5.1.4 <br />
-`-- webpack@5.89.0
+PS D:\webpack> npm list<br/>
+webpack@ D:\webpack<br/>
++-- axios@1.6.3<br/>
++-- babel-loader@9.1.3<br/>
++-- css-loader@6.8.1<br/>
++-- express@4.18.2<br/>
++-- html-webpack-plugin@5.6.0<br/>
++-- sass-loader@13.3.3<br/>
++-- sass@1.69.6<br/>
++-- style-loader@3.3.3<br/>
++-- vue-loader@16.8.3<br/>
++-- vue@3.4.0<br/>
++-- webpack-cli@5.1.4<br/>
+`-- webpack@5.89.0<br/>
+
+把vue-template-compiler刪掉 速度變快很多。
+
+        npm uninstall vue-template-compiler
 
 
 Webpack 是一個非常強大且廣泛使用的前端打包工具，具有許多常用的功能。以下是一些 Webpack 常見的功能和用途：
