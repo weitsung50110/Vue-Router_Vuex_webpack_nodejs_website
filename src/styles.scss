@@ -51,3 +51,22 @@ button:hover {
     text-align: center;
     font-size: $font-size-large; /* 使用較大字體大小變數 */
 }
+
+.navigation-links {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    margin: 0 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #f0f0f0;
+  }
