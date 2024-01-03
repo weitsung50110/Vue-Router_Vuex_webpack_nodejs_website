@@ -4,17 +4,19 @@
     <input type="text" id="userInput" placeholder="請輸入文字"> <!-- 文字輸入框 -->
     <button id="showText" v-on:click="sendData()">顯示文字</button> <!-- 按鈕用於顯示文字 -->
     <div id="txt">{{ txt }}</div> <!-- 顯示 txt 變數的內容 -->
+
+    
 </template>
 
 <script>
-import { greet } from './greeting'; // 引入 greeting.js 中的 greet 函式
+import { greet_home } from '../greeting'; // 引入 greeting.js 中的 greet 函式
 const axios = require('axios'); // 引入 axios 庫
 
 export default {
   data() {
     return {
-      message: 'Hello from Vue!', // message 變數的初始值
-      txt: '666' // txt 變數的初始值
+      message: 'Hello from Home!', // message 變數的初始值
+      txt: 'Home' // txt 變數的初始值
     };
   },
   methods: {
@@ -23,7 +25,7 @@ export default {
       const userInput = document.getElementById('userInput').value;
 
       // 使用 greet 函式並傳入使用者輸入的文字
-      const message = greet(userInput);
+      const message = greet_home(userInput);
 
       // 使用 Axios 發送 POST 請求到後端
       axios.post('/api/data', { text: message })
