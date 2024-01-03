@@ -1,3 +1,4 @@
+<!-- 這個是父組件-->
 <template>
     <!-- Vue 模板部分 -->
     <h1>Vue yoyoyo</h1>
@@ -13,13 +14,13 @@
 </template>
 
 <script>
-import NavigationLinks from './NavigationLinks.vue'; // 導入子組件
+import NavigationLinks from './components/child_NavigationLinks.vue'; // 導入子組件
 
 export default {
   components: {
     NavigationLinks // 註冊子組件
   },
-  // 組件內容
+  /*在父組件中，您需要使用 import 將子組件導入，並在父組件的 components 選項中註冊該子組件。 */
 }
 </script>
 

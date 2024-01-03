@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { greet_about } from '../greeting'; // 引入 greeting.js 中的 greet 函式
+import { greet_about } from '../composables/greeting'; // 引入 greeting.js 中的 greet 函式
 const axios = require('axios'); // 引入 axios 庫
 
 export default {

@@ -15,7 +15,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../greeting */ \"./src/greeting.js\");\n // 引入 greeting.js 中的 greet 函式\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\"); // 引入 axios 庫\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  data() {\n    return {\n      message: 'Hello from about!',\n      // message 變數的初始值\n      txt: 'about' // txt 變數的初始值\n    };\n  },\n  methods: {\n    sendData() {\n      // 獲取使用者輸入的文字\n      const userInput = document.getElementById('userInput').value;\n\n      // 使用 greet 函式並傳入使用者輸入的文字\n      const message = (0,_greeting__WEBPACK_IMPORTED_MODULE_0__.greet_about)(userInput);\n\n      // 使用 Axios 發送 POST 請求到後端\n      axios.post('/api/data', {\n        text: message\n      }).then(response => {\n        this.txt = response.data.text; // 更新 txt 為後端返回的文字\n      }).catch(error => {\n        console.error('錯誤：', error); // 處理錯誤情況\n      });\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/views/About.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet%5B1%5D.rules%5B5%5D.use%5B0%5D");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _composables_greeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../composables/greeting */ \"./src/composables/greeting.js\");\n // 引入 greeting.js 中的 greet 函式\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\"); // 引入 axios 庫\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  data() {\n    return {\n      message: 'Hello from about!',\n      // message 變數的初始值\n      txt: 'about' // txt 變數的初始值\n    };\n  },\n  methods: {\n    sendData() {\n      // 獲取使用者輸入的文字\n      const userInput = document.getElementById('userInput').value;\n\n      // 使用 greet 函式並傳入使用者輸入的文字\n      const message = (0,_composables_greeting__WEBPACK_IMPORTED_MODULE_0__.greet_about)(userInput);\n\n      // 使用 Axios 發送 POST 請求到後端\n      axios.post('/api/data', {\n        text: message\n      }).then(response => {\n        this.txt = response.data.text; // 更新 txt 為後端返回的文字\n      }).catch(error => {\n        console.error('錯誤：', error); // 處理錯誤情況\n      });\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/views/About.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet%5B1%5D.rules%5B5%5D.use%5B0%5D");
 
 /***/ }),
 
@@ -30,14 +30,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/greeting.js":
-/*!*************************!*\
-  !*** ./src/greeting.js ***!
-  \*************************/
+/***/ "./src/composables/greeting.js":
+/*!*************************************!*\
+  !*** ./src/composables/greeting.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   greet_about: () => (/* binding */ greet_about),\n/* harmony export */   greet_home: () => (/* binding */ greet_home)\n/* harmony export */ });\n// src/greeting.js\n\nconst greet_about = name => {\n  // 定義一個名為 greet 的函式，接收一個名稱參數\n  console.log(`About Hello, ${name}!`); // 在控制台輸出問候語\n  return `About Hello, ${name}!`;\n};\nconst greet_home = name => {\n  // 定義一個名為 greet 的函式，接收一個名稱參數\n  console.log(`Home Hello, ${name}!`); // 在控制台輸出問候語\n  return `Home Hello, ${name}!`;\n};\n\n//# sourceURL=webpack:///./src/greeting.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   greet_about: () => (/* binding */ greet_about),\n/* harmony export */   greet_home: () => (/* binding */ greet_home)\n/* harmony export */ });\n// src/greeting.js\n\nconst greet_about = name => {\n  // 定義一個名為 greet 的函式，接收一個名稱參數\n  console.log(`About Hello, ${name}!`); // 在控制台輸出問候語\n  return `About Hello, ${name}!`;\n};\nconst greet_home = name => {\n  // 定義一個名為 greet 的函式，接收一個名稱參數\n  console.log(`Home Hello, ${name}!`); // 在控制台輸出問候語\n  return `Home Hello, ${name}!`;\n};\n\n//# sourceURL=webpack:///./src/composables/greeting.js?");
 
 /***/ }),
 

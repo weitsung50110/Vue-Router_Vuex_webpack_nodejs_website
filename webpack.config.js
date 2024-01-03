@@ -8,7 +8,7 @@ const webpack = require('webpack');
 // 匯出 webpack 設定物件
 module.exports = {
   // 入口檔案，這裡是您的應用程式入口點
-  entry: './src/index.js',
+  entry: './src/main.js',
 
   // 輸出的 bundle 檔案設定
   output: {
