@@ -1,3 +1,9 @@
+## 目錄Table of Contents
+- [Vue-Router](#Vue-Router)
+- [components 父組件和子組件](#components-父組件和子組件)
+- [composables-組合式函數](#composables-組合式函數)
+- [webpack](#webpack)
+- [SCSS/SASS](#SCSS/SASS)
 
 PS D:\webpack> npm list<br/>
 webpack@ D:\webpack<br/>
@@ -10,6 +16,7 @@ webpack@ D:\webpack<br/>
 +-- sass@1.69.6<br/>
 +-- style-loader@3.3.3<br/>
 +-- vue-loader@16.8.3<br/>
++-- vue-router@4.2.5<br/>
 +-- vue@3.4.0<br/>
 +-- webpack-cli@5.1.4<br/>
 `-- webpack@5.89.0<br/>
@@ -18,6 +25,51 @@ webpack@ D:\webpack<br/>
 
         npm uninstall vue-template-compiler
 
+## Vue-Router
+
+1.  確保您已經安裝 Vue Router
+2.  創建一個路由器（router）實例，並在 Vue 3 專案中使用它。在您的專案中，可以建立一個 `router.js` 或 `router/index.js`
+3.  在 Vue 3 專案的入口檔案（通常是 `main.js`）中，將路由器引入並將其連接到 Vue 實例：
+4.  在您的 Vue 組件中，您可以使用路由器（router）來連結不同的路由。例如，使用 `<router-link>` 來創建鏈接到不同路由
+
+####  router-view 是用來顯示匹配到的路由組件內容的地方。當使用 router-link 點擊路由時，匹配到的組件會在這裡被渲染顯示。
+        <template>
+            <!-- Vue 模板部分 -->
+            <h1>Vue yoyoyo</h1>
+            <NavigationLinks /> <!-- 引入導航列組件 -->
+            
+            <div>
+              <router-view></router-view> <!--提供了一個動態的容器，根據路由的變化，動態地呈現不同的內容。-->
+            </div>
+        </template>
+
+## components 父組件和子組件
+在 Vue3 中，要在父組件中使用子組件 `<NavigationLinks />`，需要確保以下幾點：
+
+1.  **子組件檔案位置正確**：首先，確保 `NavigationLinks.vue` 檔案位於您指定的路徑中，通常是在 `components` 資料夾內。
+    
+2.  **導入並註冊子組件**：在父組件中，您需要使用 `import` 將子組件導入，並在父組件的 `components` 選項中註冊該子組件。
+    
+3.  **在模板中使用子組件**：將子組件的名稱作為標籤在父組件的模板中使用，例如 `<NavigationLinks />`。
+
+## composables-組合式函數
+### setup()
+setup() 函數是一個特殊的鉤子，它替代了 Vue 2 中的 data、computed、methods 等選項。在 setup() 中，您可以進行以下操作：
+
+定義和訪問響應式數據：使用 ref、reactive 等方法定義響應式數據。例如，您使用 useCounter Composable 創建了 counter 變數，該變數中包含了 count 屬性和 increment、decrement 方法。
+
+返回數據：將您想要在模板中使用的數據和方法作為對象返回。在您的示例中，counter 對象被返回，使您可以在模板中使用 counter.count、counter.increment 和 counter.decrement。
+
+訪問外部變量或屬性：setup 函數內部可以訪問外部作用域中的變量和屬性，並且可以在組件中使用這些值。
+
+監聽生命周期鉤子和事件：在 setup 中也可以使用 onMounted、onUpdated、onUnmounted 等生命周期鉤子，以及註冊事件監聽器等功能。
+
+### ref
+ref 是 Composition API 提供的一個函式，用於創建一個響應式的變數。響應式變數是一種特殊類型的變數，在其值發生變化時，會自動通知使用到它的相關部分進行重新渲染。
+
+使用 ref 函式可以將普通的 JavaScript 變數轉換為響應式變數。當您將變數傳遞給 ref 函式時，它會返回一個包裝後的對象，該對象包含一個名為 value 的屬性。您可以透過 value 屬性來訪問和修改這個響應式變數的值。
+
+## webpack
 
 Webpack 是一個非常強大且廣泛使用的前端打包工具，具有許多常用的功能。以下是一些 Webpack 常見的功能和用途：
 
