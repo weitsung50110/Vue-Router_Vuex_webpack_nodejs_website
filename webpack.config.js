@@ -4,6 +4,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');// 引入 HtmlWebpackPlugin，用於生成 HTML 檔案
 const { VueLoaderPlugin } = require('vue-loader'); // 引入 VueLoaderPlugin，用於處理 Vue 檔案
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //bootstrap需要這個
+//透過 MiniCssExtractPlugin 插件配置，在Webpack打包過程中，它會將 CSS 文件提取並自動添加到 HTML 文件中。
+
 
 // 匯出 webpack 設定物件
 module.exports = {
@@ -22,6 +25,17 @@ module.exports = {
       {
         test: /\.vue$/, // 匹配 .vue 檔案
         loader: 'vue-loader' // 使用 vue-loader 處理 Vue 單文件元件
+      },
+      // 處理 Bootstrap 的 CSS 檔案
+      {
+        // 匹配以 .css 結尾的檔案
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader, // 提取 CSS 到單獨的檔案
+          'css-loader', // 解析 CSS 檔案後，將其轉換為 CommonJS 模塊
+          /*這個插件會在Webpack打包完成後，生成一個包含所有提取的 CSS 樣式的 boot_styles.css 文件。
+            接著，HtmlWebpackPlugin插件在生成HTML文件時，會自動將這個 boot_styles.css 文件引入到HTML中。 */
+        ],
       },
       {
         test: /\.scss$/, // 匹配 .scss 檔案
@@ -55,6 +69,11 @@ module.exports = {
     // 添加 VueLoaderPlugin，用於處理 .vue 檔案
     new VueLoaderPlugin(),
     /*VueLoaderPlugin 能夠協助 Vue 的預處理器、樣式等被正確地轉換和整合到 webpack 的構建過程中。 */
+
+    // 提取bootstrap CSS 到單獨的文件
+    new MiniCssExtractPlugin({
+      filename: 'boot_styles.css', // 提取後的 CSS 文件名
+    }),
 
     // 定義全域變數，這裡定義了兩個 Vue 的全域變數
     new webpack.DefinePlugin({
