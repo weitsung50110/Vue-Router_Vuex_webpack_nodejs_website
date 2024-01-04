@@ -108,8 +108,32 @@ payload代表要傳遞的值
     *   `methods` 屬性中的 `...mapActions(['calculate'])` 將 `calculate` 映射到了組件的 `methods` 屬性中，用於觸發 Vuex store 中的 actions。
     *   模板中使用了 `v-model` 將 `input` 元素的值與 Vue 實例中的變數雙向綁定，並通過點擊按鈕來觸發相應的加法和減法計算。
 
+在template定義的@click
 
+    <button class="btn btn-primary mr-2" @click="add">Add</button>
+    <button class="btn btn-danger" @click="subtract">Subtract</button>
 
+會連接到>>
+
+    add() {
+      const sum = parseInt(this.number1) + parseInt(this.number2);
+      this.calculate(sum); // 呼叫 action 並傳遞 sum 作為 payload
+    },
+    subtract() {
+      const difference = parseInt(this.number1) - parseInt(this.number2);
+      this.calculate(difference); // 呼叫 action 並傳遞 difference 作為 payload
+    }
+
+在template定義的{{ result2 }}
+
+    <p class="result-text">Result: {{ result2 }}</p>
+
+會連接到>>
+
+    result2() {
+      return this.getResult; // 返回從 getters 中獲取的結果狀態值
+    }
+    
 ## components 父組件和子組件
 在 Vue3 中，要在父組件中使用子組件 `<NavigationLinks />`，需要確保以下幾點：
 

@@ -1,7 +1,7 @@
 <!-- 這個是父組件-->
 <template>
   <div class="container mt-5">
-    <h1 class="text-center mb-4">崴崴的Vue3數學網站</h1>
+    <h1 class="text-center mb-4">崴崴的Vue3簡單計算機網站</h1>
     <NavigationLinks /> <!-- 引入導航列組件 -->
 
     <div class="row justify-content-center">
