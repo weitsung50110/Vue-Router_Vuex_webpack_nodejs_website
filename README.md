@@ -6,26 +6,58 @@
 - [Local Bootstrap](#Local-Bootstrap)
 - [webpack](#webpack)
 - [SCSS/SASS](#SCSS/SASS)
+<br/>
 
-PS D:\webpack> npm list<br/>
-webpack@ D:\webpack<br/>
+-webpack@ D:\webpack<br/>
 +-- axios@1.6.3<br/>
 +-- babel-loader@9.1.3<br/>
++-- bootstrap@5.3.2<br/>
 +-- css-loader@6.8.1<br/>
 +-- express@4.18.2<br/>
 +-- html-webpack-plugin@5.6.0<br/>
++-- mini-css-extract-plugin@2.7.6<br/>
 +-- sass-loader@13.3.3<br/>
 +-- sass@1.69.6<br/>
 +-- style-loader@3.3.3<br/>
 +-- vue-loader@16.8.3<br/>
 +-- vue-router@4.2.5<br/>
 +-- vue@3.4.0<br/>
++-- vuex@4.0.2<br/>
 +-- webpack-cli@5.1.4<br/>
 `-- webpack@5.89.0<br/>
+
 
 把vue-template-compiler刪掉 速度變快很多。
 
         npm uninstall vue-template-compiler
+
+-樹狀圖
+- D:\webpack
+  - package.json
+  - server.js
+  - webpack.config.js
+  - src
+    - index.html
+    - main.js
+    - assets
+      - styles.scss
+    - components
+      - child_NavigationLinks.vue
+    - composables
+      - greeting.js
+      - useCounter.js
+    - router
+      - router.js
+    - store
+      - vuex.js
+    - views
+      - About.vue
+      - Counter.vue
+      - Home.vue
+      - vuex_caculator.vue
+      - vuex_counter.vue
+
+
 
 ## Vue-Router
 
