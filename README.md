@@ -2,6 +2,7 @@
 - [Vue-Router](#Vue-Router)
 - [components 父組件和子組件](#components-父組件和子組件)
 - [composables-組合式函數](#composables-組合式函數)
+- [Local Bootstrap](#Local-Bootstrap)
 - [webpack](#webpack)
 - [SCSS/SASS](#SCSS/SASS)
 
@@ -107,6 +108,23 @@ ref 是 Composition API 提供的一個函式，用於創建一個響應式的�
 
 **>當對 count.value 進行修改時，這個更改將會在 Vue 的響應式系統中被追踪，當這個值發生變化時，相關的視圖也會自動更新。
 這意味著 initialValue 在這個過程中不再被使用，因為響應式變數 count 的值已經在運行時被動態地修改了。**
+
+## Local Bootstrap
+- MiniCssExtractPlugin 套件
+
+透過 MiniCssExtractPlugin 插件配置，在Webpack打包過程中，它會將Bootstrap的 CSS 文件提取並自動添加到 HTML 文件中。<br>
+這插件會在Webpack打包完成後，生成一個包含所有提取的 CSS 樣式的 styles.css 文件。
+
+接著，HtmlWebpackPlugin插件在生成HTML文件時，會自動將這個 styles.css 文件引入到HTML中。<br>
+所以當Webpack完成打包時，它會自動處理並將 styles.css 文件添加到你的HTML文件中。
+
+        const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //bootstrap需要這個
+        // 匹配以 .css 結尾的檔案，我安裝了bootstrap，他會去node_modules內尋找bootstrap的.css
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader, // 提取 CSS 到單獨的檔案
+          'css-loader', // 解析 CSS 檔案後，將其轉換為 CommonJS 模塊
+        ],
 
 ## webpack
 
