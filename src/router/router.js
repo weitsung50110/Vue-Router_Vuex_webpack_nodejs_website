@@ -4,22 +4,29 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/', // 定義首頁路徑
-    component: () => import('./views/Home.vue') // 對應的組件 - 首頁
+    component: () => import('../views/Home.vue') // 對應的組件 - 首頁
     // 使用動態載入，當路由匹配到時才載入組件，以減少初始加載時間
     // 使用箭頭函數和動態 import 語法，這樣組件會在需要時被動態加載
     // './views/Home.vue' 是首頁組件的路徑，請根據您的專案結構修改路徑
   },
   {
     path: '/about', // 定義關於頁面路徑
-    component: () => import('./views/About.vue') // 對應的組件 - 關於頁面
+    component: () => import('../views/About.vue') // 對應的組件 - 關於頁面
     // 使用動態載入，當路由匹配到時才載入組件，以減少初始加載時間
     // 使用箭頭函數和動態 import 語法，這樣組件會在需要時被動態加載
     // './views/About.vue' 是關於頁面組件的路徑，請根據您的專案結構修改路徑
   },
   {
     path: '/counter', // 定義關於頁面路徑
-    component: () => import('./views/Counter.vue') // 對應的組件 - 關於頁面
-
+    component: () => import('../views/Counter.vue') // 對應的組件 - 關於頁面
+  },
+  {
+    path: '/vuex_counter', // 定義關於頁面路徑
+    component: () => import('../views/vuex_counter.vue') // 對應的組件 - 關於頁面
+  },
+  {
+    path: '/vuex_caculator', // 定義關於頁面路徑
+    component: () => import('../views/vuex_caculator.vue') // 對應的組件 - 關於頁面
   },
 ];
 
