@@ -54,20 +54,53 @@ webpack@ D:\webpack<br/>
 
 ## composables-組合式函數
 ### setup()
-setup() 函數是一個特殊的鉤子，它替代了 Vue 2 中的 data、computed、methods 等選項。在 setup() 中，您可以進行以下操作：
+setup() 函數是一個特殊的鉤子，它替代了 Vue 2 中的 data、computed、methods 等選項。
 
-定義和訪問響應式數據：使用 ref、reactive 等方法定義響應式數據。例如，您使用 useCounter Composable 創建了 counter 變數，該變數中包含了 count 屬性和 increment、decrement 方法。
+setup() 可以定義和訪問響應式數據：使用 ref、reactive 等方法定義響應式數據。<br/>
+例如，使用 useCounter Composable 創建了 counter 變數，該變數中包含了 count 屬性和 increment、decrement 方法。
 
-返回數據：將您想要在模板中使用的數據和方法作為對象返回。在您的示例中，counter 對象被返回，使您可以在模板中使用 counter.count、counter.increment 和 counter.decrement。
+        export default {
+          setup() {
+            // 使用 useCounter Composable 創建一個名為 counter 的對象
+            const counter = useCounter(); // 此 counter 對象包含了計數器的狀態和方法
+        
+            // 在 setup() 中返回 counter 對象，使其可以在模板中使用
+            return {
+              counter // 返回的對象可以在模板中進行解構或直接使用
+            };
+          }
+        };
+
+返回數據：將想要在模板中使用的數據和方法作為對象返回。<br/>
+`return { counter };` 將 `counter` 對象返回給模板。這樣，模板中的 `{{ counter.count }}` 就可以訪問 `counter` 對象的 `count` 屬性，<br/>
+並且透過 `@click` 事件觸發 `counter` 對象中的 `increment` 和 `decrement` 方法。
+
+        <!-- 模板部分 -->
+          <div>
+            <p>Count: {{ counter.count }}</p> <!-- 顯示計數器的當前值 -->
+            <button @click="counter.increment">Increment</button> <!-- 點擊此按鈕觸發增加計數器值的函式 -->
+            <button @click="counter.decrement">Decrement</button> <!-- 點擊此按鈕觸發減少計數器值的函式 -->
+          </div>
 
 訪問外部變量或屬性：setup 函數內部可以訪問外部作用域中的變量和屬性，並且可以在組件中使用這些值。
 
 監聽生命周期鉤子和事件：在 setup 中也可以使用 onMounted、onUpdated、onUnmounted 等生命周期鉤子，以及註冊事件監聽器等功能。
 
 ### ref
-ref 是 Composition API 提供的一個函式，用於創建一個響應式的變數。響應式變數是一種特殊類型的變數，在其值發生變化時，會自動通知使用到它的相關部分進行重新渲染。
+ref 是 Composition API 提供的一個函式，用於創建一個響應式的變數。<br/>
+響應式變數是一種特殊類型的變數，在其值發生變化時，會自動通知使用到它的相關部分進行重新渲染。
 
-使用 ref 函式可以將普通的 JavaScript 變數轉換為響應式變數。當您將變數傳遞給 ref 函式時，它會返回一個包裝後的對象，該對象包含一個名為 value 的屬性。您可以透過 value 屬性來訪問和修改這個響應式變數的值。
+使用 ref 函式可以將普通的 JavaScript 變數轉換為響應式變數。<br/>
+當您將變數傳遞給 ref 函式時，它會返回一個包裝後的對象，該對象包含一個名為 value 的屬性。您可以透過 value 屬性來訪問和修改這個響應式變數的值。
+
+        export function useCounter(initialValue = 0) {
+          // 使用 ref 創建一個響應式的 count 變數，初始值為傳入的 initialValue
+          const count = ref(initialValue); //當count.value有值後，就不會再從initialValue拿值了
+  
+**>第一次調用 useCounter() 時，如果沒有提供 initialValue 的值，它將使用預設值 0 作為初始值。但這僅限於第一次調用，之後再次調用 useCounter() 就不會再改變 initialValue 的值**
+
+**>當對 count.value 進行修改時，這個更改將會在 Vue 的響應式系統中被追踪，當這個值發生變化時，相關的視圖也會自動更新。
+這意味著 initialValue 在這個過程中不再被使用，因為響應式變數 count 的值已經在運行時被動態地修改了。**
 
 ## webpack
 
