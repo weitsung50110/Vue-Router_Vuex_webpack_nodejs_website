@@ -1,5 +1,6 @@
 ## 目錄Table of Contents
 - [Vue-Router](#Vue-Router)
+- [Vuex](#Vuex)
 - [components 父組件和子組件](#components-父組件和子組件)
 - [composables-組合式函數](#composables-組合式函數)
 - [Local Bootstrap](#Local-Bootstrap)
@@ -43,6 +44,39 @@ webpack@ D:\webpack<br/>
               <router-view></router-view> <!--提供了一個動態的容器，根據路由的變化，動態地呈現不同的內容。-->
             </div>
         </template>
+
+## Vuex
+映射 Getters 和 Actions 到 Vue 組件
+mapGetters 和 mapActions 這兩個輔助函數使用方式如下：
+
+#### vuex_counter
+- mapGetters：將 Vuex store 中的 getters 映射到組件的 computed 屬性中。
+- mapActions：將 Vuex store 中的 actions 映射到組件的 methods 屬性中。
+
+*   `state` 定義了應用程式的狀態，這裡只有一個名為 `count` 的狀態，初始值為 `0`。
+*   `mutations` 是用來修改 `state` 中數據的地方，`increment` 和 `decrement` 是兩個 mutation 方法，分別用來增加和減少 `count` 狀態的值。
+*   `actions` 中的 `increment` 和 `decrement` 方法可以被調用來觸發相對應的 mutations。
+*   `getters` 中的 `getCount` 方法允許你從 `state` 中取得 `count` 的值。
+
+#### vue_caculator
+{ commit } 這個語法是將 commit 從 context 中解構出來，讓你可以在 actions 中直接使用 commit 方法，而不必每次都寫 context.commit。
+
+payload代表要傳遞的值
+
+1.  **Vuex Store**：在 `store/index.js` 中，設置了一個 Vuex store 包含了：
+    
+    *   `state`：定義了應用程式的狀態，這裡有一個名為 `result` 的狀態，初始值為 `0`。
+    *   `mutations`：包含了一個名為 `setResult` 的 mutation，用於修改 `result` 狀態的值。
+    *   `actions`：包含了一個名為 `calculate` 的 action，用於執行計算並呼叫 `setResult` mutation 來更新 `result` 狀態。
+    *   `getters`：包含了一個名為 `getResult` 的 getter，允許從 `state` 中取得 `result` 的值。
+2.  **Vue 組件**：在 Vue 組件中，使用了 Vuex store：
+    
+    *   透過 `mapGetters` 和 `mapActions` 輔助函數將 Vuex 中的 `getters` 和 `actions` 映射到了 Vue 組件中。
+    *   `computed` 屬性中的 `...mapGetters(['getResult'])` 將 `getResult` 映射到了組件的 `computed` 屬性中，用於顯示從 Vuex store 中取得的狀態值。
+    *   `methods` 屬性中的 `...mapActions(['calculate'])` 將 `calculate` 映射到了組件的 `methods` 屬性中，用於觸發 Vuex store 中的 actions。
+    *   模板中使用了 `v-model` 將 `input` 元素的值與 Vue 實例中的變數雙向綁定，並通過點擊按鈕來觸發相應的加法和減法計算。
+
+
 
 ## components 父組件和子組件
 在 Vue3 中，要在父組件中使用子組件 `<NavigationLinks />`，需要確保以下幾點：
