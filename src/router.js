@@ -16,7 +16,11 @@ const routes = [
     // 使用箭頭函數和動態 import 語法，這樣組件會在需要時被動態加載
     // './views/About.vue' 是關於頁面組件的路徑，請根據您的專案結構修改路徑
   },
-  // 可以繼續添加其他路由
+  {
+    path: '/counter', // 定義關於頁面路徑
+    component: () => import('./views/Counter.vue') // 對應的組件 - 關於頁面
+
+  },
 ];
 
 const router = createRouter({

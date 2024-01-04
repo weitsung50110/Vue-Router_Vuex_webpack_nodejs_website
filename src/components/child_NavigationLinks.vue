@@ -2,6 +2,7 @@
   <div class="navigation-links">
     <router-link to="/" class="nav-link">Home</router-link>
     <router-link to="/about" class="nav-link">About</router-link>
+    <router-link to="/counter" class="nav-link">Counter</router-link>
     <!-- 您可以添加其他路由鏈接 -->
   </div>
 </template>
