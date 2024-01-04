@@ -11,13 +11,11 @@ $font-size-large: 20px; // 較大字體大小，用於顯示區域
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4; /* 背景色 */
     color: $text-color; /* 使用文字顏色變數 */
 
     #app_mess {
-        text-align: center;
+        
         margin-top: 100px;
 
         input[type="text"] {
@@ -27,13 +25,6 @@ body {
         }
 
         button {
-            padding: 8px 16px;
-            font-size: $font-size-medium; /* 使用字體大小變數 */
-            cursor: pointer;
-            background-color: $primary-color; /* 使用主要顏色變數 */
-            color: white;
-            border: none;
-
             &:hover {
                 background-color: $secondary-color; /* 使用次要顏色變數 */
             }

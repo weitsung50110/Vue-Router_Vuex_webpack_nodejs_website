@@ -1,7 +1,7 @@
 <!-- 這個是父組件-->
 <template>
     <!-- Vue 模板部分 -->
-    <h1>Vue yoyoyo</h1>
+    <h1>崴崴的Vue3數學網站</h1>
     <NavigationLinks /> <!-- 引入導航列組件 -->
     
     <div>

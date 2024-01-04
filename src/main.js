@@ -4,7 +4,7 @@
 //const axios = require('axios');// 引入 axios 庫
 import './assets/styles.scss'; // 引入 SCSS 樣式文件
 
-
+import 'bootstrap/dist/css/bootstrap.css'; // 引入 Bootstrap CSS 樣式
 import { createApp } from 'vue';// 引入 Vue 的 createApp 函式
 import AppMess from './App_Parent.vue';// 引入 AppMess 元件
 import router from './router'; // 引入剛剛建立的 router 實例

@@ -1,8 +1,9 @@
+<!-- views/About.vue -->
 <template>
     <!-- Vue 模板部分 -->
     <div>{{ message }}</div> <!-- 顯示 message 變數的內容 -->
-    <input type="text" id="userInput" placeholder="請輸入文字"> <!-- 文字輸入框 -->
-    <button id="showText" v-on:click="sendData()">顯示文字</button> <!-- 按鈕用於顯示文字 -->
+    <input type="text" id="userInput" placeholder="請輸入文字" class="form-control"> <!-- 文字輸入框 -->
+    <button id="showText" v-on:click="sendData()" class="btn btn-primary">顯示文字</button> <!-- 按鈕用於顯示文字 -->
     <div id="txt">{{ txt }}</div> <!-- 顯示 txt 變數的內容 -->
 
     
