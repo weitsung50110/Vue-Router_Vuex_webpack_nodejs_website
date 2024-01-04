@@ -1,13 +1,21 @@
 <template>
-  <div class="navigation-links">
-    <router-link to="/" class="btn btn-secondary">Home</router-link>
-    <div class="mr-5">
-      <router-link to="/about" class="btn btn-secondary">About</router-link>
+  <div class="navigation-links row">
+    <div class="col-4">
+      <div class="ml-1">
+        <router-link to="/" class="btn btn-secondary">Home</router-link>
+      </div>
     </div>
-    <div class="mr-5">
-      <router-link to="/counter" class="btn btn-secondary">Counter</router-link>
+    <div class="col-4">
+      <div class="ml-1">
+        <router-link to="/about" class="btn btn-secondary">About</router-link>
+      </div>
     </div>
-    <!-- 您可以添加其他路由鏈接 -->
+    <div class="col-4">
+      <div class="ml-1">
+        <router-link to="/counter" class="btn btn-secondary">Counter</router-link>
+      </div>
+    </div>
+    <!-- 可以添加其他路由鏈接 -->
   </div>
 </template>
 

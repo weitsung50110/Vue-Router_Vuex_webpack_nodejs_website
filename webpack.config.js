@@ -28,7 +28,7 @@ module.exports = {
       },
       // 處理 Bootstrap 的 CSS 檔案
       {
-        // 匹配以 .css 結尾的檔案
+        // 匹配以 .css 結尾的檔案，我安裝了bootstrap，他會去node_modules內尋找bootstrap的.css
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader, // 提取 CSS 到單獨的檔案

@@ -1,16 +1,23 @@
 <!-- views/About.vue -->
 <template>
-    <!-- Vue 模板部分 -->
-    <div>{{ message }}</div> <!-- 顯示 message 變數的內容 -->
-    <input type="text" id="userInput" placeholder="請輸入文字" class="form-control"> <!-- 文字輸入框 -->
-    <button id="showText" v-on:click="sendData()" class="btn btn-primary">顯示文字</button> <!-- 按鈕用於顯示文字 -->
-    <div id="txt">{{ txt }}</div> <!-- 顯示 txt 變數的內容 -->
-
+  <!-- Vue 模板部分 -->
+  <!-- 使用栅格系统的 row 和 col-md-6 类创建居中的列 -->
+  <div class="col">
+    <!-- 创建一个信息提示框样式的元素，用于显示 message 变量的内容 -->
+    <div class="alert alert-info mt-3">{{ message }}</div>
     
+    <!-- 创建一个输入框，使用 form-control 类进行样式设置 -->
+    <input type="text" id="userInput" placeholder="請輸入文字" class="form-control my-3">
+    <button id="showText" v-on:click="sendData()" class="btn btn-primary">showText</button>
+    <button id="showText" v-on:click="intro_go()" class="btn btn-primary">Introduction</button>
+    
+    <!-- 用于显示 txt 变量的内容，添加了一些上边距 -->
+    <div class="mt-3" id="txt">{{ txt }}</div>
+  </div>
 </template>
 
 <script>
-import { greet_about } from '../composables/greeting'; // 引入 greeting.js 中的 greet 函式
+import { greet_about, intro_about } from '../composables/greeting'; // 引入 greeting.js 中的 greet 函式
 const axios = require('axios'); // 引入 axios 庫
 
 export default {
@@ -36,6 +43,9 @@ export default {
         .catch(error => {
           console.error('錯誤：', error); // 處理錯誤情況
         });
+    },
+    intro_go(){
+      this.message = intro_about();
     }
   }
 };

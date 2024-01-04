@@ -1,16 +1,19 @@
 <!-- 這個是父組件-->
 <template>
-    <!-- Vue 模板部分 -->
-    <h1>崴崴的Vue3數學網站</h1>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">崴崴的Vue3數學網站</h1>
     <NavigationLinks /> <!-- 引入導航列組件 -->
-    
-    <div>
+
+    <div class="row justify-content-center">
+      <!-- 使用栅格系统的 row 和 justify-content-center 类创建居中的列 -->
+  
+      <router-view></router-view><!--提供了一個動態的容器，根據路由的變化，動態地呈現不同的內容。-->
       <!--
-      <router-view> 是用來顯示匹配到的路由組件內容的地方。
-      當使用 <router-link> 點擊路由時，匹配到的組件會在這裡被渲染顯示。
-    -->
-      <router-view></router-view> <!--提供了一個動態的容器，根據路由的變化，動態地呈現不同的內容。-->
+        <router-view> 是用來顯示匹配到的路由組件內容的地方。
+        當使用 <router-link> 點擊路由時，匹配到的組件會在這裡被渲染顯示。
+      -->
     </div>
+  </div>
 </template>
 
 <script>

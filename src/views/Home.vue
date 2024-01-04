@@ -1,13 +1,11 @@
+
 <template>
-    <!-- Vue 模板部分 -->
-    <div class="col-md-3">
-        <div class="card">
-          <div>{{ message }}</div> <!-- 顯示 message 變數的內容 -->
-          <input type="text" id="userInput" placeholder="請輸入文字" class="form-control"> <!-- 文字輸入框 -->
-          <button id="showText" v-on:click="sendData()" class="btn btn-primary">顯示文字</button> <!-- 按鈕用於顯示文字 -->
-          <div id="txt">{{ txt }}</div> <!-- 顯示 txt 變數的內容 -->
-        </div>
-    </div>
+  <div class="col">
+    <div class="alert alert-info mt-3">{{ message }}</div><!-- 顯示 message 變數的內容 -->
+    <input type="text" id="userInput" placeholder="請輸入文字" class="form-control my-3"><!-- 文字輸入框 -->
+    <button id="showText" v-on:click="sendData()" class="btn btn-primary">showText</button><!-- 按鈕用於顯示文字 -->
+    <div class="mt-3" id="txt">{{ txt }}</div><!-- 顯示 txt 變數的內容 -->
+  </div>
 </template>
 
 <script>

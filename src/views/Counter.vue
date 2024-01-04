@@ -1,10 +1,10 @@
 <template>
   <!-- 模板部分 -->
-  <div>
-    <p>Count: {{ counter.count }}</p> <!-- 顯示計數器的當前值 -->
-    <button @click="counter.increment">Increment</button> <!-- 點擊此按鈕觸發增加計數器值的函式 -->
-    <button @click="counter.decrement">Decrement</button> <!-- 點擊此按鈕觸發減少計數器值的函式 -->
-  </div>
+    <p class="display-4">Count: {{ counter.count }}</p> <!-- 顯示計數器的當前值 -->
+    <div class="btn-group" role="group">
+      <button @click="counter.increment" class="btn btn-primary">Increment</button> <!-- 點擊此按鈕觸發增加計數器值的函式 -->
+      <button @click="counter.decrement" class="btn btn-primary">Decrement</button> <!-- 點擊此按鈕觸發減少計數器值的函式 -->
+    </div>
 </template>
 
 <script>
