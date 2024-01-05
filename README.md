@@ -4,6 +4,7 @@
 - [components 父組件和子組件](#components-父組件和子組件)
 - [composables-組合式函數](#composables-組合式函數)
 - [Local Bootstrap](#Local-Bootstrap)
+- [Demonstration](#Demonstration)
 - [webpack](#webpack)
 - [SCSS/SASS](#SCSS/SASS)
 <br/>
@@ -215,6 +216,27 @@ ref 是 Composition API 提供的一個函式，用於創建一個響應式的�
           MiniCssExtractPlugin.loader, // 提取 CSS 到單獨的檔案
           'css-loader', // 解析 CSS 檔案後，將其轉換為 CommonJS 模塊
         ],
+
+## Demonstration
+Using Bootstrap to achieve Responsive Web Design (RWD) effects.
+- vuex_caculator
+![](https://raw.githubusercontent.com/weitsung50110/Vue-Router_Vuex_webpack_nodejs_website/main/githubImages/0.png)
+![](https://raw.githubusercontent.com/weitsung50110/Vue-Router_Vuex_webpack_nodejs_website/main/githubImages/1.png)
+
+- Counter vs vuex_counter
+
+  - Counter uses composables, `import { ref } from 'vue'`;
+  - vuex_counter uses vuex, `import { createStore } from 'vuex'`;
+![](https://raw.githubusercontent.com/weitsung50110/Vue-Router_Vuex_webpack_nodejs_website/main/githubImages/2.png)
+![](https://raw.githubusercontent.com/weitsung50110/Vue-Router_Vuex_webpack_nodejs_website/main/githubImages/3.png)
+
+- About
+![](https://raw.githubusercontent.com/weitsung50110/Vue-Router_Vuex_webpack_nodejs_website/main/githubImages/4.png)
+![](https://raw.githubusercontent.com/weitsung50110/Vue-Router_Vuex_webpack_nodejs_website/main/githubImages/5.png)
+
+- Greeting page
+  - Using `Axios` to send a greeting to the Node.js server, and then receiving information back from the server.
+![](https://raw.githubusercontent.com/weitsung50110/Vue-Router_Vuex_webpack_nodejs_website/main/githubImages/6.png)
 
 ## webpack
 
